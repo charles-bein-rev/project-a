@@ -33,7 +33,7 @@ public class Converter {
 				System.out.println("1. SI/Metric");
 				System.out.println("2. Imperial");
 				System.out.println("3. Quit Program");
-				input = scanner.nextLine();
+				input = scanner.next();
 				directionChoice = parseDirection(input);
 				if(directionChoice == -1) {
 					invalidChoice = true;
@@ -55,11 +55,12 @@ public class Converter {
 					System.out.println("3. Temperature (celsius/fahrenheit)");
 					System.out.println("4. Back to direction choice");
 					System.out.println("5. Quit Program");
-					input = scanner.nextLine();
+					input = scanner.next();
 					unitChoice = parseUnits(input);
+					System.out.println();
 					if(unitChoice == -1) {
 						invalidChoice = true;
-						System.out.println("\n\n\nInvalid choice, please select a menu option.");
+						System.out.println("\n\nInvalid choice, please select a menu option.");
 					}
 				} while(invalidChoice);
 				switch(unitChoice) {
@@ -81,6 +82,7 @@ public class Converter {
 					quitSystem = true;
 					break;
 				}
+				System.out.println();
 			}
 		}
 	}
@@ -170,12 +172,12 @@ public class Converter {
 			System.out.println("Enter the distance in kilometers:");
 			input = scanner.nextFloat();
 			result = input / 1.609;
-			System.out.println(input + " km is equal to " + decimalFormat.format(result) + "mi");
+			System.out.println(input + " km is equal to " + decimalFormat.format(result) + " mi");
 		} else if(direction == 2) {
 			System.out.println("Enter the distance in miles:");
 			input = scanner.nextFloat();
 			result = input * 1.609;
-			System.out.println(input + " mi is equal to " + decimalFormat.format(result) + "km");
+			System.out.println(input + " mi is equal to " + decimalFormat.format(result) + " km");
 
 		} else {
 			System.out.println("Should never be reached");
